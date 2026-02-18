@@ -13,52 +13,60 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(to top, #0f1021, #1b1f3a, #2a2f5a); /* 밤하늘 그라데이션 */
+  background-image: url("window.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   font-family: 'Baloo 2', cursive;
 }
 
-/* 카드 */
+/* 🌙 카드 전체 비율 조정 */
 .container {
-  width: 220px;
-  padding: 18px;
-  border-radius: 20px;
+  width: 220px;              /* 살짝 확대 */
+  padding: 20px;
+  border-radius: 22px;
   background: rgba(20, 25, 60, 0.65);
   backdrop-filter: blur(8px);
   text-align: center;
   color: white;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  box-shadow: 0 8px 22px rgba(0,0,0,0.3);
 }
 
 /* 타이틀 */
 .title {
-  font-size: 26px;
+  font-size: 16px;
   font-weight: 600;
   margin-bottom: 14px;
 }
 
-/* 타이머 숫자 */
+/* ⏰ Time */
 .time {
-  font-size: 72px;
+  font-size: 44px;
   font-weight: 700;
-  margin: 18px 0;
+  margin: 20px 0;
 }
 
-/* 모드 버튼 */
+/* 🔹 Mode buttons */
 .modes {
   display: flex;
   justify-content: center;
-  gap: 8px;
-  margin-bottom: 14px;
+  gap: 3px;        /* 거의 붙게 */
+  margin-bottom: 16px;
 }
 
 .mode-btn {
   border: none;
   background: rgba(255,255,255,0.25);
   color: white;
-  padding: 6px 10px;
-  border-radius: 14px;
-  font-size: 20px;
+  padding: 6px 14px;
+  border-radius: 16px;
+  font-size: 15px;
   cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.mode-btn:hover {
+  background: rgba(255,255,255,0.35);
 }
 
 .mode-btn.active {
@@ -66,32 +74,42 @@ body {
   font-weight: 600;
 }
 
-/* 컨트롤 버튼 */
+/* 🎛 Controls */
 .controls {
   display: flex;
   justify-content: center;
-  gap: 8px;
+  gap: 10px;
 }
 
 .control-btn {
   background: #ff9f5f;
   border: none;
   color: white;
-  padding: 8px 16px;
+  padding: 8px 20px;
   border-radius: 16px;
-  font-size: 22px;
+  font-size: 16px;
   cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.control-btn:hover {
+  transform: scale(1.05);
 }
 
 .icon-btn {
   background: rgba(255,255,255,0.25);
   border: none;
   color: white;
-  width: 32px;
-  height: 32px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  font-size: 24px;
+  font-size: 18px;
   cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.icon-btn:hover {
+  background: rgba(255,255,255,0.35);
 }
 </style>
 </head>
