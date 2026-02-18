@@ -13,47 +13,54 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url("window.png");
+  background-image: url(".png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   font-family: 'Baloo 2', cursive;
 }
 
-/* 🌙 중간 사이즈 카드 */
+/* 카드 (살짝 확대) */
 .container {
-  width: 260px;
-  padding: 22px;
-  border-radius: 24px;
+  width: 220px;
+  padding: 18px;
+  border-radius: 20px;
   background: rgba(20, 25, 60, 0.65);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(8px);
   text-align: center;
   color: white;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
 }
 
 /* 타이틀 */
 .title {
-  font-size: 16px;
+  font-size: 26px;   /* 2배 */
   font-weight: 600;
   margin-bottom: 14px;
 }
 
-/* 🔹 Mode buttons */
+/* 타이머 숫자 */
+.time {
+  font-size: 72px;   /* 2배 */
+  font-weight: 700;
+  margin: 18px 0;
+}
+
+/* 모드 버튼 */
 .modes {
   display: flex;
   justify-content: center;
-  gap: 10px;
-  margin-bottom: 16px;
+  gap: 8px;
+  margin-bottom: 14px;
 }
 
 .mode-btn {
   border: none;
   background: rgba(255,255,255,0.25);
   color: white;
-  padding: 6px 12px;
-  border-radius: 16px;
-  font-size: 12px;
+  padding: 6px 10px;
+  border-radius: 14px;
+  font-size: 20px;   /* 2배 */
   cursor: pointer;
 }
 
@@ -62,27 +69,20 @@ body {
   font-weight: 600;
 }
 
-/* ⏰ 🔥 타이머 숫자 크게 */
-.time {
-  font-size: 108px;   /* 👈 기존보다 3배 크게 */
-  font-weight: 700;
-  margin: 20px 0;
-}
-
-/* 🎛 Controls */
+/* 컨트롤 버튼 */
 .controls {
   display: flex;
   justify-content: center;
-  gap: 10px;
+  gap: 8px;
 }
 
 .control-btn {
   background: #ff9f5f;
   border: none;
   color: white;
-  padding: 8px 18px;
-  border-radius: 18px;
-  font-size: 14px;
+  padding: 8px 16px;
+  border-radius: 16px;
+  font-size: 22px;   /* 2배 */
   cursor: pointer;
 }
 
@@ -90,10 +90,10 @@ body {
   background: rgba(255,255,255,0.25);
   border: none;
   color: white;
-  width: 36px;
-  height: 36px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
-  font-size: 16px;
+  font-size: 24px;   /* 2배 */
   cursor: pointer;
 }
 </style>
