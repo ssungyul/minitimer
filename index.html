@@ -1,106 +1,113 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
 <meta charset="UTF-8" />
-<title>썬귤이 집중타이머</title>
+<title>Sunny Timer</title>
+
+<!-- 💛 Cute Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(to top, #9be2fe, #67d1fb);
-  height: 100vh;
+  background: linear-gradient(to top, #a8e6ff, #6fd3ff);
+  font-family: 'Baloo 2', cursive;
 }
 
-/* 🌿 메인 카드 */
+/* 🌿 Card */
 .container {
-  width: 280px;
-  background: rgba(255,255,255,0.15);
-  backdrop-filter: blur(10px);
-  border-radius: 28px;
-  padding: 24px;
+  width: 260px;
+  padding: 22px;
+  border-radius: 26px;
+  background: rgba(255,255,255,0.2);
+  backdrop-filter: blur(12px);
   text-align: center;
-  box-shadow: 0 8px 30px rgba(0,0,0,0.15);
   color: white;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
-/* 🍊 타이틀 */
+/* 🍊 Title */
 .title {
-  font-size: 14px;
-  opacity: 0.9;
-  margin-bottom: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 4px;
 }
 
 .subtitle {
-  font-size: 11px;
-  opacity: 0.7;
-  margin-bottom: 18px;
+  font-size: 12px;
+  opacity: 0.8;
+  margin-bottom: 16px;
 }
 
-/* ⏰ 시간 */
+/* ⏰ Time */
 .time {
-  font-size: 56px;
+  font-size: 54px;
   font-weight: 700;
   margin: 20px 0;
 }
 
-/* 🌿 모드 버튼 */
+/* 🌼 Mode buttons */
 .modes {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
 }
 
 .mode-btn {
   border: none;
-  background: rgba(255,255,255,0.2);
+  background: rgba(255,255,255,0.3);
   color: white;
-  padding: 6px 12px;
-  border-radius: 18px;
-  cursor: pointer;
+  padding: 6px 10px;
+  border-radius: 16px;
   font-size: 12px;
+  cursor: pointer;
+  transition: 0.2s;
 }
 
 .mode-btn.active {
-  background: #ff914d;
-  color: white;
+  background: #ff9f5f;
   font-weight: 600;
 }
 
-/* 🍊 컨트롤 버튼 */
+.mode-btn:hover {
+  transform: scale(1.05);
+}
+
+/* 🍊 Controls */
 .controls {
   display: flex;
   justify-content: center;
-  gap: 10px;
+  gap: 8px;
 }
 
 .control-btn {
-  background: #ff914d;
+  background: #ff9f5f;
   border: none;
   color: white;
-  padding: 8px 18px;
-  border-radius: 20px;
+  padding: 7px 16px;
+  border-radius: 18px;
   font-size: 13px;
   cursor: pointer;
 }
 
 .icon-btn {
-  background: rgba(255,255,255,0.2);
+  background: rgba(255,255,255,0.3);
   border: none;
   color: white;
-  width: 38px;
-  height: 38px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
-  font-size: 16px;
+  font-size: 15px;
   cursor: pointer;
 }
 
-/* ✨ 감성 문구 */
+/* 🌿 Cute message */
 .message {
-  margin-top: 14px;
+  margin-top: 12px;
   font-size: 11px;
   opacity: 0.8;
 }
@@ -111,24 +118,24 @@ body {
 
 <div class="container">
 
-  <div class="title">🍊 썬귤이의 자립연구소</div>
-  <div class="subtitle">오늘도 한 걸음 성장 중</div>
+  <div class="title">🍊 Sunny Focus Timer</div>
+  <div class="subtitle">Grow a little every 25 minutes</div>
 
   <div class="modes">
-    <button class="mode-btn active" onclick="setMode('pomodoro', this)">집중</button>
-    <button class="mode-btn" onclick="setMode('short', this)">짧은휴식</button>
-    <button class="mode-btn" onclick="setMode('long', this)">긴휴식</button>
+    <button class="mode-btn active" onclick="setMode('pomodoro', this)">Focus</button>
+    <button class="mode-btn" onclick="setMode('short', this)">Short</button>
+    <button class="mode-btn" onclick="setMode('long', this)">Long</button>
   </div>
 
   <div class="time" id="time">25:00</div>
 
   <div class="controls">
-    <button class="control-btn" onclick="startTimer()">시작</button>
+    <button class="control-btn" onclick="startTimer()">Start</button>
     <button class="icon-btn" onclick="pauseTimer()">⏸</button>
     <button class="icon-btn" onclick="resetTimer()">⟳</button>
   </div>
 
-  <div class="message">🌿 작은 25분이 모여 큰 자립이 된다</div>
+  <div class="message">✨ Small steps make big dreams</div>
 
 </div>
 
@@ -170,7 +177,7 @@ function startTimer() {
     if (totalSeconds <= 0) {
       clearInterval(timer);
       timer = null;
-      alert("🍊 썬귤이: 수고했어! 잠깐 쉬자 🌿");
+      alert("🍊 Great job! Take a little break ✨");
       return;
     }
     totalSeconds--;
